@@ -10,18 +10,19 @@
         /* Basic inline styles for this example */
         body {
             font-family: Arial, sans-serif;
+            background-image: url('hero-bg_1730833230679001s1PM.jpg');
             margin: 0;
             padding: 0;
             background-color: #f4f4f4;
             color: #333;
         }
         .hero {
-            background-image: url('blog-image-why-attend-elive-25.jpg');
+            background-image: url('hero-bg_1730833230679001s1PM.jpg');
             background-size: cover;
             background-position: center;
-            color: white;
+            color: rgb(14, 13, 13);
             text-align: center;
-            padding: 100px 20px;
+            padding: 120px 20px;
         }
         .hero h1 {
             font-size: 2.5em;
@@ -44,6 +45,8 @@
         }
         .content-section {
             padding: 50px 20px;
+            background-image: url('whitebackground.png');
+            color: black;
             background-color: white;
             text-align: center;
         }
@@ -59,11 +62,140 @@
         .content-section li {
             padding: 8px 0;
         }
+        .agenda-section {
+            background-color: #f9f9f9;
+            padding: 50px 20px;
+            text-align: center;
+        }
+        .agenda-day {
+            width: 100%;
+            text-align: center;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            background-image: url("whitestar.svg");
+            background-size: cover;
+            margin-bottom: 30px;
+        }
+        .agenda-day h3 {
+            font-size: 1.8em;
+            color: #007bff;
+            margin-bottom: 10px;
+            text-align: left;
+        }
+        .agenda-day ul {
+            list-style-type: none;
+            padding: 0;
+            font-size: 1.1em;
+            text-align: left;
+        }
+        .agenda-day li {
+            padding: 5px 0;
+        }
+        .guest-speakers {
+            background-color: #f9f9f9;
+            background-image: url('whitebackground.png');
+            padding: 50px 20px;
+        }
+        .guest-speakers h2 {
+            font-size: 2.5em;
+            text-align: center;
+            color: #333;
+        }
+        .speakers-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            background-image: url('whitebackground.png');
+            gap: 30px;
+        }
+        .speaker {
+            width: 200px;
+            text-align: center;
+            padding: 10px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        .speaker img {
+            width: 100%;
+            height: 250px;
+            background-image: url("hero-image.jpg");
+            object-fit: cover;
+            border-radius: 8px;
+        }
+        .speaker h3 {
+            margin-top: 15px;
+            text-align: ;
+            font-size: 1.2em;
+        }
+        .speaker p {
+            font-size: 1em;
+            color: #555;
+        }
         footer {
             text-align: center;
             padding: 20px;
             background-color: #333;
             color: white;
+        }
+        /* Styles for the modal */
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed; 
+            z-index: 1; /* Sit on top */
+            left: 0;
+            top: 0;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            background-color: rgba(0, 0, 0, 0.5); /* Background overlay */
+            padding-top: 60px; /* Set top padding for the modal content */
+        }
+
+        .modal-content {
+            background-color: white;
+            margin: 5% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 50%; /* Set a fixed width */
+            border-radius: 8px;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .modal-form input, .modal-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .modal-form button {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .modal-form button:hover {
+            background-color: #0056b3;
         }
     </style>
 </head>
@@ -71,14 +203,24 @@
     
     <!-- Hero Section -->
     <div class="hero">
-        <h1>Why Attend Ellucian Live 2025?</h1>
+        <img src="tagline.svg"/>
+    </div>
+
+    <!-- Main Content -->
+
+    <!-- Button to open the modal -->
+    <div style="text-align: center; margin-top: 20px;">
+        <button onclick="document.getElementById('infoModal').style.display='block'" class="cta-button">Submit Information About Yourself</button>
+    </div>
+
+    <div class="content-section">
+        <h1><font color="purple">Why Attend Ellucian Live 2025?</font></h1>
         <p>Join us for an immersive experience with keynotes, workshops, and networking opportunities.</p>
         <a href="#register" class="cta-button">Register Now</a>
     </div>
 
-    <!-- Main Content -->
     <div class="content-section">
-        <h2>Reasons to Attend</h2>
+        <h2><font color="purple">Reasons to Attend</font></h2>
         <ul>
             <li>Gain insights from industry leaders</li>
             <li>Engage in hands-on workshops</li>
@@ -86,13 +228,96 @@
             <li>Access the latest educational technologies</li>
             <li>Take part in exclusive sessions and events</li>
         </ul>
-    </div>
 
-    <div class="content-section">
-        <h2>Event Details</h2>
+        <h2><font color="purple">Event Details</font></h2>
         <p><strong>Date:</strong> April 12-15, 2025</p>
         <p><strong>Location:</strong> Orlando, Florida</p>
         <p><strong>Speakers:</strong> Renowned experts in the education and technology fields</p>
+    </div>
+
+    <!-- Guest Speakers Section (Moved Before Agenda) -->
+    <div class="guest-speakers">
+        <h2><font color="purple">Meet Our Esteemed Guests</font></h2>
+        <div class="speakers-list">
+            <!-- Speaker 1 -->
+            <div class="speaker">
+                <img src="speaker1.jpg" alt="Speaker 1">
+                <h3>Deion Sanders</h3>
+                <p>Deion "Prime Time" Sanders is the head football coach at the University of Colorado and the only person in professional sports history to play in the World Series and the Super Bowl.</p>
+            </div>
+            <!-- Speaker 2 -->
+            <div class="speaker">
+                <img src="speaker2.jpg" alt="Speaker 2">
+                <h3>Maurice Conti</h3>
+                <p>Maurice Conti is an AI futurist, TEDx speaker, and deep tech authority with visions of a world where humans and machines work together to solve business and society's most pressing challenges.</p>
+            </div>
+            <!-- Speaker 3 -->
+            <div class="speaker">
+                <img src="speaker3.jpg" alt="Speaker 3">
+                <h3>Paul LeBlanc</h3>
+                <p>A former President of Southern New Hampshire University and co-founder of Matter and Space, Dr. Paul LeBlanc is a widely renowned leader with decades of experience transforming higher education with technology.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Agenda Section -->
+    <div class="agenda-section">
+        <h2><font color="purple">Event Agenda</font></h2>
+        <!-- Day 1 -->
+        <div class="agenda-day">
+            <h3>Sunday April 6, 2025</h3>
+            <ul>
+                <li>8:00 AM - 9:00 AM: Registration & Breakfast</li>
+                <li>9:00 AM - 10:00 AM: Opening Keynote: The Future of Education</li>
+                <li>10:15 AM - 11:45 AM: Workshop: Emerging Technologies in Higher Ed</li>
+                <li>12:00 PM - 1:00 PM: Networking Lunch</li>
+                <li>1:15 PM - 2:45 PM: Panel Discussion: The Role of AI in Learning</li>
+                <li>3:00 PM - 4:30 PM: Breakout Sessions: Best Practices for Campus Digital Transformation</li>
+                <li>6:00 PM - 8:00 PM: Welcome Reception</li>
+            </ul>
+        </div>
+
+        <!-- Day 2 -->
+        <div class="agenda-day">
+            <h3>Day 2: April 13, 2025 - Deep Dive Sessions</h3>
+            <ul>
+                <li>8:00 AM - 9:00 AM: Breakfast with Industry Experts</li>
+                <li>9:00 AM - 10:30 AM: Workshop: Modernizing Campus Infrastructure</li>
+                <li>10:45 AM - 12:15 PM: Session: Optimizing Learning Platforms for Student Success</li>
+                <li>12:30 PM - 1:30 PM: Networking Lunch</li>
+                <li>1:45 PM - 3:15 PM: Hands-on Lab: Building Data-Driven Solutions</li>
+                <li>3:30 PM - 5:00 PM: Roundtable: Collaboration Between IT and Faculty</li>
+                <li>6:00 PM - 8:00 PM: Networking Event</li>
+            </ul>
+        </div>
+
+        <!-- Day 3 -->
+        <div class="agenda-day">
+            <h3>Day 3: April 14, 2025 - Innovation & Networking</h3>
+            <ul>
+                <li>8:00 AM - 9:00 AM: Breakfast & Sponsor Expo</li>
+                <li>9:00 AM - 10:30 AM: Keynote: Shaping the Future of Education through Innovation</li>
+                <li>10:45 AM - 12:15 PM: Interactive Session: Advancements in Cloud-Based Learning Tools</li>
+                <li>12:30 PM - 1:30 PM: Networking Lunch</li>
+                <li>1:45 PM - 3:15 PM: Workshop: Scaling Digital Education Solutions</li>
+                <li>3:30 PM - 5:00 PM: Expert Panel: Technology Trends for the Next Decade</li>
+                <li>7:00 PM - 9:00 PM: Gala Dinner & Awards Ceremony</li>
+            </ul>
+        </div>
+
+        <!-- Day 4 -->
+        <div class="agenda-day">
+            <h3>Day 4: April 15, 2025 - Closing Day</h3>
+            <ul>
+                <li>8:00 AM - 9:00 AM: Closing Breakfast</li>
+                <li>9:00 AM - 10:30 AM: Closing Keynote: The Future of EdTech and Student Engagement</li>
+                <li>10:45 AM - 12:15 PM: Breakout Sessions: Building a Sustainable Education Ecosystem</li>
+                <li>12:30 PM - 1:30 PM: Networking Lunch</li>
+                <li>1:45 PM - 3:00 PM: Final Panel: The Next Frontier in Education</li>
+                <li>3:15 PM - 4:00 PM: Closing Remarks & Farewell</li>
+                <li>4:00 PM - 6:00 PM: Optional Post-Conference Networking</li>
+            </ul>
+        </div>
     </div>
 
     <!-- Call to Action -->
@@ -105,6 +330,18 @@
     <footer>
         <p>&copy; 2025 Ellucian Live. All rights reserved.</p>
     </footer>
+
+    <script>
+        // Get the modal
+        var modal = document.getElementById("infoModal");
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
 
 </body>
 </html>
