@@ -68,15 +68,22 @@
             text-align: center;
         }
         .agenda-day {
-            width: 100%;
+            width: 40%;
             text-align: center;
             padding: 20px;
             background-color: white;
             border-radius: 8px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
             background-image: url("whitestar.svg");
             background-size: cover;
             margin-bottom: 30px;
+            
+        }
+        .agenda-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
         }
         .agenda-day h3 {
             font-size: 1.8em;
@@ -177,7 +184,7 @@
         }
 
         .modal-form input, .modal-form textarea {
-            width: 100%;
+            width: 95%;
             padding: 10px;
             margin: 10px 0;
             border: 1px solid #ccc;
@@ -185,9 +192,9 @@
         }
 
         .modal-form button {
-            background-color: #007bff;
+            background-color: #75b8ff;
             color: white;
-            padding: 10px 20px;
+            padding: 10px 2px;
             border: none;
             border-radius: 4px;
             font-size: 16px;
@@ -195,7 +202,7 @@
         }
 
         .modal-form button:hover {
-            background-color: #0056b3;
+            background-color: #72b1f5;
         }
     </style>
 </head>
@@ -208,18 +215,41 @@
 
     <!-- Main Content -->
 
-    <!-- Button to open the modal -->
-    <div style="text-align: center; margin-top: 20px;">
-        <button onclick="document.getElementById('infoModal').style.display='block'" class="cta-button">Submit Information About Yourself</button>
-    </div>
-
     <div class="content-section">
+
+        <!-- Button to open the modal -->
+        <div style="text-align: center; margin-top: 20px;">
+            <button onclick="document.getElementById('infoModal').style.display='block'" class="cta-button">Submit Information About Yourself</button>
+        </div>
+
+        <!-- Modal -->
+        <div id="infoModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="document.getElementById('infoModal').style.display='none'">&times;</span>
+                <h2>Submit Your Information</h2>
+                <form class="modal-form">
+                    <label for="name">Your Name</label>
+                    <input type="text" id="name" name="name" placeholder="Enter your name" required>
+
+                    <label for="email">Your Email</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+                    <label for="message">Your Message</label>
+                    <textarea id="message" name="message" placeholder="Tell us about yourself" rows="4" required></textarea>
+
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+        </div>
+
+        <br/><br/><br/><br/>
+
         <h1><font color="purple">Why Attend Ellucian Live 2025?</font></h1>
         <p>Join us for an immersive experience with keynotes, workshops, and networking opportunities.</p>
         <a href="#register" class="cta-button">Register Now</a>
-    </div>
+        
+        <br/><br/><br/><br/><br/><br/>
 
-    <div class="content-section">
         <h2><font color="purple">Reasons to Attend</font></h2>
         <ul>
             <li>Gain insights from industry leaders</li>
@@ -262,61 +292,46 @@
 
     <!-- Agenda Section -->
     <div class="agenda-section">
-        <h2><font color="purple">Event Agenda</font></h2>
+        <h2><font color="purple">Event Agenda Preview</font></h2>
         <!-- Day 1 -->
-        <div class="agenda-day">
-            <h3>Sunday April 6, 2025</h3>
-            <ul>
-                <li>8:00 AM - 9:00 AM: Registration & Breakfast</li>
-                <li>9:00 AM - 10:00 AM: Opening Keynote: The Future of Education</li>
-                <li>10:15 AM - 11:45 AM: Workshop: Emerging Technologies in Higher Ed</li>
-                <li>12:00 PM - 1:00 PM: Networking Lunch</li>
-                <li>1:15 PM - 2:45 PM: Panel Discussion: The Role of AI in Learning</li>
-                <li>3:00 PM - 4:30 PM: Breakout Sessions: Best Practices for Campus Digital Transformation</li>
-                <li>6:00 PM - 8:00 PM: Welcome Reception</li>
-            </ul>
-        </div>
+         <div class="agenda-list">
+            <div class="agenda-day">
+                <h3>Sunday April 6, 2025</h3>
+                <ul>
+                    <li>1:00 PM - 4:45 PM: User Group Meeting for Birds of a Feather Sessions</li>
+                    <li>5:00 PM - 7:00 PM: Welcome Reception</li>
+                </ul>
+            </div>
 
-        <!-- Day 2 -->
-        <div class="agenda-day">
-            <h3>Day 2: April 13, 2025 - Deep Dive Sessions</h3>
-            <ul>
-                <li>8:00 AM - 9:00 AM: Breakfast with Industry Experts</li>
-                <li>9:00 AM - 10:30 AM: Workshop: Modernizing Campus Infrastructure</li>
-                <li>10:45 AM - 12:15 PM: Session: Optimizing Learning Platforms for Student Success</li>
-                <li>12:30 PM - 1:30 PM: Networking Lunch</li>
-                <li>1:45 PM - 3:15 PM: Hands-on Lab: Building Data-Driven Solutions</li>
-                <li>3:30 PM - 5:00 PM: Roundtable: Collaboration Between IT and Faculty</li>
-                <li>6:00 PM - 8:00 PM: Networking Event</li>
-            </ul>
-        </div>
+            <!-- Day 2 -->
+            <div class="agenda-day">
+                <h3>Monday April 7, 2025 - Innovation & Networking</h3>
+                <ul>
+                    <li>8:30 AM - 10:30 AM: Opening Keynote</li>
+                    <li>11:00 AM - 5:00 PM: Concurrent Track Sessions (5)</li>
+                    <li>5:30 PM - 7:30 PM: Attendee Networking Reception</li>
+                </ul>
+            </div>
 
-        <!-- Day 3 -->
-        <div class="agenda-day">
-            <h3>Day 3: April 14, 2025 - Innovation & Networking</h3>
-            <ul>
-                <li>8:00 AM - 9:00 AM: Breakfast & Sponsor Expo</li>
-                <li>9:00 AM - 10:30 AM: Keynote: Shaping the Future of Education through Innovation</li>
-                <li>10:45 AM - 12:15 PM: Interactive Session: Advancements in Cloud-Based Learning Tools</li>
-                <li>12:30 PM - 1:30 PM: Networking Lunch</li>
-                <li>1:45 PM - 3:15 PM: Workshop: Scaling Digital Education Solutions</li>
-                <li>3:30 PM - 5:00 PM: Expert Panel: Technology Trends for the Next Decade</li>
-                <li>7:00 PM - 9:00 PM: Gala Dinner & Awards Ceremony</li>
-            </ul>
-        </div>
+            <!-- Day 3 -->
+            <div class="agenda-day">
+                <h3>Tuesday April 8, 2025 - Deep Dive Sessions</h3>
+                <ul>
+                    <li>8:30 AM - 10:30 AM: Keynote</li>
+                    <li>11:00 AM - 5:00 PM: Concurrent Track Sessions (5)</li>
+                    <li>7:00 PM - 9:30 PM: Customer Appreciation Event</li>
+                </ul>
+            </div>
+        
 
-        <!-- Day 4 -->
-        <div class="agenda-day">
-            <h3>Day 4: April 15, 2025 - Closing Day</h3>
-            <ul>
-                <li>8:00 AM - 9:00 AM: Closing Breakfast</li>
-                <li>9:00 AM - 10:30 AM: Closing Keynote: The Future of EdTech and Student Engagement</li>
-                <li>10:45 AM - 12:15 PM: Breakout Sessions: Building a Sustainable Education Ecosystem</li>
-                <li>12:30 PM - 1:30 PM: Networking Lunch</li>
-                <li>1:45 PM - 3:00 PM: Final Panel: The Next Frontier in Education</li>
-                <li>3:15 PM - 4:00 PM: Closing Remarks & Farewell</li>
-                <li>4:00 PM - 6:00 PM: Optional Post-Conference Networking</li>
-            </ul>
+            <!-- Day 4 -->
+            <div class="agenda-day">
+                <h3>Wednesday April 15, 2025 - Closing Day</h3>
+                <ul>
+                    <li>8:30 AM - 10:15 AM: Concurrent Track Sessions 2</li>
+                    <li>10:45 AM - 12:15 PM: Closing Keynote</li>
+                </ul>
+            </div>
         </div>
     </div>
 
