@@ -22,7 +22,7 @@
             background-position: center;
             color: rgb(14, 13, 13);
             text-align: center;
-            padding: 120px 20px;
+            padding: 100px 20px;
         }
         .hero h1 {
             font-size: 2.5em;
@@ -53,6 +53,11 @@
         .content-section h2 {
             font-size: 2em;
             color: #333;
+        }
+        .content-section h4{
+            word-wrap: break-word;
+            width: 100%;
+            text-align: center;
         }
         .content-section ul {
             list-style-type: none;
@@ -162,6 +167,7 @@
 
         .modal-content {
             background-color: white;
+            background-image: url("whitebackground.png");
             margin: 5% auto;
             padding: 20px;
             border: 1px solid #888;
@@ -217,25 +223,38 @@
 
     <div class="content-section">
 
+        <h3><font color="purple"> Congradulations on being selected to represent our prestegious community here at Ellusian Live 2025! 
+        </font><h3/><h4>
+            In order to ensure that
+            we are able to begin processing your attendance. Please go ahead and submit the information on the following page so that we
+            have our marketing and travel agents reach out.</h4>
+            
+            <br/><br/><br/>
         <!-- Button to open the modal -->
         <div style="text-align: center; margin-top: 20px;">
-            <button onclick="document.getElementById('infoModal').style.display='block'" class="cta-button">Submit Information About Yourself</button>
+            <button onclick="document.getElementById('infoModal').style.display='block'" class="cta-button">Begin Your Attendee Journey Here!</button>
         </div>
 
         <!-- Modal -->
         <div id="infoModal" class="modal">
             <div class="modal-content">
                 <span class="close" onclick="document.getElementById('infoModal').style.display='none'">&times;</span>
-                <h2>Submit Your Information</h2>
-                <form class="modal-form">
-                    <label for="name">Your Name</label>
-                    <input type="text" id="name" name="name" placeholder="Enter your name" required>
+                <h3><font color="purple">Please submit your for our Marketing and Attendence team's records. They will reach out regarding further accomodations for the event!</font></h3>
+                <form class="modal-form" action="https://formspree.io/f/xpwwgdqw" method="post">
+                    <label for="name"><b>Full Name</b></label>
+                    <input type="text" id="name" name="name" placeholder="Full legal name" required>
 
-                    <label for="email">Your Email</label>
-                    <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                    <label for="nickname"><b>Representitive Name</b></label>
+                    <input type="text" id="name" name="name" placeholder="What name would you like to show up on our marketing?" required>
 
-                    <label for="message">Your Message</label>
-                    <textarea id="message" name="message" placeholder="Tell us about yourself" rows="4" required></textarea>
+                    <label for="email"><b>Email</b></label>
+                    <input type="email" id="email" name="email"  placeholder="Email for our team to contact you" required>
+
+                    <label for="address"><b>Address</b></label>
+                    <input type="text" id="address" name="address" placeholder="For our team to send out goodies!" required>
+
+                    <label for="message"><b>What should everyone know about you?</b></label>
+                    <textarea id="message" name="message" placeholder="Anything in particular you wish to have our team focus on for promotion" rows="8" required></textarea>
 
                     <button type="submit">Submit</button>
                 </form>
@@ -246,7 +265,7 @@
 
         <h1><font color="purple">Why Attend Ellucian Live 2025?</font></h1>
         <p>Join us for an immersive experience with keynotes, workshops, and networking opportunities.</p>
-        <a href="#register" class="cta-button">Register Now</a>
+        <!-- <a href="https://elive.ellucian.com/flow/ellucian/elive25/home/page/ellucianlive?utm_source=blog&utm_medium=referral&utm_campaign=2025_gl_brd_ev_ellucian-live-reg-blog&utm_campaignid=701Nu00000G8SpAIAV&utm_content=reg-open" class="cta-button">Register Now</a> -->
         
         <br/><br/><br/><br/><br/><br/>
 
@@ -272,19 +291,19 @@
             <!-- Speaker 1 -->
             <div class="speaker">
                 <img src="speaker1.jpg" alt="Speaker 1">
-                <h3>Deion Sanders</h3>
+                <h3><a target="_blank" href="https://www.ellucian.com/news/deion-prime-time-sanders-keynote-ellucian-live-2025"> Deion Sanders</a></h3>
                 <p>Deion "Prime Time" Sanders is the head football coach at the University of Colorado and the only person in professional sports history to play in the World Series and the Super Bowl.</p>
             </div>
             <!-- Speaker 2 -->
             <div class="speaker">
                 <img src="speaker2.jpg" alt="Speaker 2">
-                <h3>Maurice Conti</h3>
+                <h3><a target="_blank" href="https://www.ellucian.com/news/ai-futurist-maurice-conti-return-ellucian-live-mainstage">Maurice Conti</a></h3>
                 <p>Maurice Conti is an AI futurist, TEDx speaker, and deep tech authority with visions of a world where humans and machines work together to solve business and society's most pressing challenges.</p>
             </div>
             <!-- Speaker 3 -->
             <div class="speaker">
                 <img src="speaker3.jpg" alt="Speaker 3">
-                <h3>Paul LeBlanc</h3>
+                <h3><a target="_blank" href="https://www.ellucian.com/news/ellucian-announces-dr-paul-leblanc-ellucian-live-2025-mainstage-speaker">Paul LeBlanc</a></h3>
                 <p>A former President of Southern New Hampshire University and co-founder of Matter and Space, Dr. Paul LeBlanc is a widely renowned leader with decades of experience transforming higher education with technology.</p>
             </div>
         </div>
@@ -338,7 +357,7 @@
     <!-- Call to Action -->
     <div class="content-section">
         <h2>Ready to Join Us?</h2>
-        <a href="#register" class="cta-button">Register for Ellucian Live 2025</a>
+        <a href="https://elive.ellucian.com/flow/ellucian/elive25/home/page/ellucianlive?utm_source=blog&utm_medium=referral&utm_campaign=2025_gl_brd_ev_ellucian-live-reg-blog&utm_campaignid=701Nu00000G8SpAIAV&utm_content=reg-open" class="cta-button">Register for Ellucian Live 2025</a>
     </div>
 
     <!-- Footer -->
